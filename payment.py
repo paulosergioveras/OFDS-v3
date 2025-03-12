@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from datetime import datetime
 
+
 class Payment(ABC):
     def __init__(self, amount):
         self.amount = amount
@@ -51,7 +52,6 @@ class DebitCard(Payment):
         if len(self.card_number) != 16 or not self.card_number.isdigit():
             return False
 
-        # Verifica se a data de vencimento é válida e está no futuro
         try:
             exp_date = datetime.strptime(self.expiration_date, "%m/%y")
             if exp_date < datetime.now():
