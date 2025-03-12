@@ -53,3 +53,4 @@ The project consists of the following modules:
 ### Delivery
 - The `Delivery` class tracks the status of an order's delivery, including updates on preparation, dispatch, and delivery.
 
+To run the project and show the features use python app.py
