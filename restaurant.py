@@ -7,10 +7,10 @@ class Restaurant:
     def __init__(self, name, address, owner):
         self.name = name
         self.address = address
-        self.owner = owner  # O proprietário do restaurante
-        self.menu = Menu(self)  # Passa a referência do restaurante para o Menu
-        self.reviews = Review()  # Componente Review
-        self.promotions = Promotion(self)  # Passa a referência do restaurante para Promotion
+        self.owner = owner
+        self.menu = Menu(self)
+        self.reviews = Review()
+        self.promotions = Promotion(self)
 
     def add_review(self, user, review_text, rating):
         """Adiciona uma avaliação."""

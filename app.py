@@ -90,8 +90,8 @@ def manage_restaurants(owners, restaurants):
     if choice == "1":
         name = input("Nome do Restaurante: ")
         address = input("Endereço do Restaurante: ")
-        owner_name = input("Nome do Proprietário: ")  # Solicita o nome do proprietário
-        owner = next((o for o in owners if o.name == owner_name), None)  # Busca o proprietário pelo nome
+        owner_name = input("Nome do Proprietário: ")  
+        owner = next((o for o in owners if o.name == owner_name), None)  
         if owner:
             restaurant = Restaurant(name, address, owner)
             restaurants.append(restaurant)
@@ -129,8 +129,8 @@ def manage_orders(customers, restaurants, orders):
     choice = input("Escolha uma opção: ")
 
     if choice == "1":
-        customer_name = input("Nome do Cliente: ")  # Solicita o nome do cliente
-        customer = next((c for c in customers if c.name == customer_name), None)  # Busca o cliente pelo nome
+        customer_name = input("Nome do Cliente: ") 
+        customer = next((c for c in customers if c.name == customer_name), None)
         if customer:
             restaurant_name = input("Nome do Restaurante: ")
             restaurant = next((r for r in restaurants if r.name == restaurant_name), None)
@@ -143,8 +143,8 @@ def manage_orders(customers, restaurants, orders):
         else:
             print("Cliente não encontrado.")
     elif choice == "2":
-        customer_name = input("Nome do Cliente: ")  # Solicita o nome do cliente
-        order = next((o for o in orders if o.customer.name == customer_name), None)  # Busca o pedido pelo nome do cliente
+        customer_name = input("Nome do Cliente: ")
+        order = next((o for o in orders if o.customer.name == customer_name), None)
         if order:
             dish_name = input("Nome do Prato: ")
             quantity = int(input("Quantidade: "))
@@ -153,14 +153,14 @@ def manage_orders(customers, restaurants, orders):
         else:
             print("Pedido não encontrado.")
     elif choice == "3":
-        customer_name = input("Nome do Cliente: ")  # Solicita o nome do cliente
-        order = next((o for o in orders if o.customer.name == customer_name), None)  # Busca o pedido pelo nome do cliente
+        customer_name = input("Nome do Cliente: ")
+        order = next((o for o in orders if o.customer.name == customer_name), None)
         if order:
             print(order.display_order())
         else:
             print("Pedido não encontrado.")
     elif choice == "4":
-        pass  # Voltar ao menu principal
+        pass
     else:
         print("Opção inválida. Tente novamente.")
 
@@ -172,8 +172,8 @@ def manage_reviews(customers, restaurants):
     choice = input("Escolha uma opção: ")
 
     if choice == "1":
-        customer_name = input("Nome do Cliente: ")  # Solicita o nome do cliente
-        customer = next((c for c in customers if c.name == customer_name), None)  # Busca o cliente pelo nome
+        customer_name = input("Nome do Cliente: ")  
+        customer = next((c for c in customers if c.name == customer_name), None) 
         if customer:
             restaurant_name = input("Nome do Restaurante: ")
             restaurant = next((r for r in restaurants if r.name == restaurant_name), None)
@@ -194,7 +194,7 @@ def manage_reviews(customers, restaurants):
         else:
             print("Restaurante não encontrado.")
     elif choice == "3":
-        pass  # Voltar ao menu principal
+        pass
     else:
         print("Opção inválida. Tente novamente.")
 
@@ -206,8 +206,8 @@ def manage_promotions(owners, restaurants):
     choice = input("Escolha uma opção: ")
 
     if choice == "1":
-        owner_name = input("Nome do Proprietário: ")  # Solicita o nome do proprietário
-        owner = next((o for o in owners if o.name == owner_name), None)  # Busca o proprietário pelo nome
+        owner_name = input("Nome do Proprietário: ")
+        owner = next((o for o in owners if o.name == owner_name), None)
         if owner:
             code = input("Código da Promoção: ")
             value = float(input("Valor da Promoção (0-1): "))
@@ -224,7 +224,7 @@ def manage_promotions(owners, restaurants):
         else:
             print("Restaurante não encontrado.")
     elif choice == "3":
-        pass  # Voltar ao menu principal
+        pass
     else:
         print("Opção inválida. Tente novamente.")
 
@@ -260,7 +260,7 @@ def manage_payments():
         payment = Cash(amount)
         print(payment.process_payment())
     elif choice == "5":
-        pass  # Voltar ao menu principal
+        pass
     else:
         print("Opção inválida. Tente novamente.")
 
@@ -273,11 +273,11 @@ def manage_support(support, customers):
     choice = input("Escolha uma opção: ")
 
     if choice == "1":
-        customer_name = input("Nome do Cliente: ")  # Solicita o nome do cliente
-        customer = next((c for c in customers if c.name == customer_name), None)  # Busca o cliente pelo nome
+        customer_name = input("Nome do Cliente: ") 
+        customer = next((c for c in customers if c.name == customer_name), None)  
         if customer:
             issue = input("Descreva o problema: ")
-            print(support.open_ticket(customer.name, issue))  # Usa o nome do cliente
+            print(support.open_ticket(customer.name, issue))  
         else:
             print("Cliente não encontrado.")
     elif choice == "2":
@@ -287,7 +287,7 @@ def manage_support(support, customers):
     elif choice == "3":
         print(support.display_tickets())
     elif choice == "4":
-        pass  # Voltar ao menu principal
+        pass 
     else:
         print("Opção inválida. Tente novamente.")
 

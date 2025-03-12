@@ -18,7 +18,6 @@ class CreditCard(Payment):
         self.cvv = cvv
 
     def validate_card(self):
-        # Verifica se o número do cartão tem 16 dígitos
         if len(self.card_number) != 16 or not self.card_number.isdigit():
             return False
 
@@ -30,7 +29,6 @@ class CreditCard(Payment):
         except ValueError:
             return False
 
-        # Verifica se o CVV tem 3 dígitos
         if len(self.cvv) != 3 or not self.cvv.isdigit():
             return False
 
@@ -50,7 +48,6 @@ class DebitCard(Payment):
         self.cvv = cvv
 
     def validate_card(self):
-        # Verifica se o número do cartão tem 16 dígitos
         if len(self.card_number) != 16 or not self.card_number.isdigit():
             return False
 
@@ -62,7 +59,6 @@ class DebitCard(Payment):
         except ValueError:
             return False
 
-        # Verifica se o CVV tem 3 dígitos
         if len(self.cvv) != 3 or not self.cvv.isdigit():
             return False
 
